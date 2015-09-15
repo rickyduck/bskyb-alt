@@ -1,0 +1,10 @@
+.main-header {
+    background: rgba(0,0,0, 0.2);
+
+}
+
+.main-header h1 {
+    margin: 0;
+    padding: 40px;
+}
+

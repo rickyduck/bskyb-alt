@@ -4,9 +4,8 @@ import BillActions from '../actions/BillActions';
 
 class BillStore {
     constructor() {
-        super();
         this.bindListeners({
-            updateBill: BillActions.UPDATE_BILL
+            updateBill: BillActions.loadBill
         });
         this.on('init', () => {
             this.bill = null;

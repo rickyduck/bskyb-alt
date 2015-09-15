@@ -5,14 +5,14 @@ module.exports = {
     entry:  [
         'webpack-dev-server/client?http://localhost:8080/',
         'webpack/hot/only-dev-server',
-        './src'
+        './src/client.js'
     ],
     output: {
-        path:     path.join(__dirname, 'dist'),
+        path:     path.join(__dirname, 'public/react'),
         filename: 'bundle.js'
     },
     resolve: {
-        modulesDirectories: ['node_modules', 'shared'],
+        modulesDirectories: ['node_modules', 'src'],
         extensions:         ['', '.js', '.jsx']
     },
     module: {
@@ -20,8 +20,9 @@ module.exports = {
             {
                 test:    /\.jsx?$/,
                 exclude: /node_modules/,
-                loaders: ['react-hot', 'babel']
-            }
+                loaders: ["react-hot", 'babel-loader?stage=0']
+            },
+            { test: /\.css$/, loader: "style-loader!css-loader" }
         ]
     },
     plugins: [

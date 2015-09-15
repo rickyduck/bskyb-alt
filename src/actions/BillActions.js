@@ -1,8 +1,9 @@
 import alt from '../libs/alt';
 import request from 'superagent';
 
-import config from '../config';
+import config from '../../config';
 
+import NProgress from 'nprogress';
 
 class BillActions {
     loadBill(cb) {
