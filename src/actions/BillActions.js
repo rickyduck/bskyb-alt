@@ -8,7 +8,7 @@ import NProgress from 'nprogress';
 class BillActions {
     loadBill(cb) {
         NProgress.start();
-        request.get(config.ajaxUrl, (err, response) => {
+        request.get(config.AJAX_URL, (err, response) => {
             if (err) console.error(err);
 
             this.actions.updateBill(response.body);

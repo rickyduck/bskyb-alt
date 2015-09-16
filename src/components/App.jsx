@@ -13,8 +13,10 @@ export default class App extends React.Component {
         return (
             <div className="app-container">
                 <Header />
-                <div className="container">
-                    <RouteHandler />
+                <div className="route-container">
+                    <div className="container">
+                        <RouteHandler />
+                    </div>
                 </div>
             </div>
         );

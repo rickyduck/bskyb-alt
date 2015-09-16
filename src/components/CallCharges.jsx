@@ -1,12 +1,11 @@
 import alt from '../libs/alt';
 import { RouteHandler, Link } from 'react-router';
 import React from 'react';
-import { Table } from 'reactabular';
 import Paginator from 'react-pagify';
-import 'react-pagify/style.css';
-
+import numberUtils from '../utils/numberUtils';
 import BillStore from '../stores/BillStore';
 
+import CallTable from './widgets/CallTable';
 import StatementInfo from './widgets/StatementInfo';
 import Navigation from './widgets/Navigation';
 
@@ -14,6 +13,7 @@ export default class CallCharges extends React.Component {
     static contextTypes = {
         router: React.PropTypes.func.isRequired
     };
+
     constructor(props) {
         super(props);
         this.state = BillStore.getState();
@@ -23,15 +23,19 @@ export default class CallCharges extends React.Component {
         };
         this.onSelect = this.onSelect.bind(this);
     }
+
     componentDidMount() {
         BillStore.listen(this.onChange);
     }
+
     componentWillUnmount() {
         BillStore.unlisten(this.onChange);
     }
+
     onChange(state) {
         this.setState(state);
     }
+
     onSelect(page) {
         let pagination = this.state.pagination || {};
         pagination.page = page;
@@ -39,6 +43,7 @@ export default class CallCharges extends React.Component {
             pagination: pagination
         });
     }
+
     onPerPage(e) {
         let pagination = this.state.pagination || {};
         pagination.perPage = parseInt(event.target.value, 10);
@@ -46,6 +51,7 @@ export default class CallCharges extends React.Component {
             pagination: pagination
         });
     }
+
     render() {
         const bill = this.state.bill;
         const pagination = this.state.pagination;
@@ -56,23 +62,17 @@ export default class CallCharges extends React.Component {
                 <aside className="col-md-4 sidebar">
 
                     <Navigation />
-                    <StatementInfo statement={bill.statement} total={bill.total} />
+                    <StatementInfo statement={bill.statement} total={bill.total}/>
 
 
                 </aside>
                 <div className="col-md-8">
                     <h2>Call Charges</h2>
+                    <h3>Total - {numberUtils.formatGBP(bill.callCharges.total)}</h3>
                     <hr />
                     <section className="recent-calls">
-                        <Table
-                            className="table"
-                            data={paginated.data}
-                            columns={[
-                                    {property: "called", header: "Number called"},
-                                    {property: "duration", header: "Duration of call"},
-                                    {property: "cost", header: "Cost"}
-                                ]}
-                            />
+                        <CallTable data={paginated.data} />
+
                         <div className='pagination'>
                             <Paginator
                                 page={paginated.page}

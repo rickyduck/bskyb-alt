@@ -1,13 +1,10 @@
 import React from 'react';
 import { RouteHandler, Link } from 'react-router';
-import moment from 'moment';
+import dateTimeUtils from '../../utils/dateTimeUtils';
+import numberUtils from '../../utils/numberUtils';
 export default class StatementInfo extends React.Component {
     constructor(props) {
         super(props);
-    }
-
-    formatDate(date) {
-        return moment(date).format("MMM Do YYYY");
     }
 
     render() {
@@ -23,19 +20,19 @@ export default class StatementInfo extends React.Component {
                         <tbody>
                         <tr>
                             <th scope="row">From:</th>
-                            <td>{this.formatDate(statement.period.from)}</td>
+                            <td>{dateTimeUtils.formatDate(statement.period.from)}</td>
                         </tr>
                         <tr>
                             <th scope="row">To:</th>
-                            <td>{this.formatDate(statement.period.to)}</td>
+                            <td>{dateTimeUtils.formatDate(statement.period.to)}</td>
                         </tr>
                         <tr>
                             <th scope="row">Due on:</th>
-                            <td>{this.formatDate(statement.due)}</td>
+                            <td>{dateTimeUtils.formatDate(statement.due)}</td>
                         </tr>
                         <tr>
                             <th scope="row">Total:</th>
-                            <td>{total}</td>
+                            <td>{numberUtils.formatGBP(total)}</td>
                         </tr>
                         </tbody>
                     </table>

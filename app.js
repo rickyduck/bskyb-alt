@@ -1,9 +1,3 @@
-/**
- * Express configurations.
- *
- * @type {exports|module.exports}
- */
-
 var Router = require('react-router');
 var React = require('react/addons');
 var express = require('express');
@@ -24,7 +18,7 @@ app.set('views', __dirname+'/views');
 app.set('view engine', 'jade');
 
 app.use(express.static(path.join(__dirname, 'public')));
-app.use(session({secret: 'copy cat', resave: false, saveUninitialized: true}));
+app.use(session({secret: 'copy cat', resave: true, saveUninitialized: true}));
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json({limit : '50mb'}));
 app.use(cookieParser());

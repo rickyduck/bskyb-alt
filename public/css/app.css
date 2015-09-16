@@ -1,10 +1,79 @@
-.main-header {
-    background: rgba(0,0,0, 0.2);
-
+/*
+Fonts
+*/
+@font-face {
+    font-family: Tondo;
+    src: url(//web.static.nowtv.com/assets/fonts/NOWTVText_W_Bd.eot),url(//web.static.nowtv.com/assets/fonts/NOWTVText_W_Bd.woff2) format("woff2"),url(//web.static.nowtv.com/assets/fonts/NOWTVText_W_Bd.woff) format("woff"),url(//web.static.nowtv.com/assets/fonts/NOWTVText_W_Bd.ttf) format("truetype"),url(//web.static.nowtv.com/assets/fonts/NOWTVText_W_Bd.svg) format("svg");
+    font-weight: 700;
+    font-style: normal
 }
 
+@font-face {
+    font-family: Tondo;
+    src: url(//web.static.nowtv.com/assets/fonts/NOWTVText_W_Rg.eot),url(//web.static.nowtv.com/assets/fonts/NOWTVText_W_Rg.woff2) format("woff2"),url(//web.static.nowtv.com/assets/fonts/NOWTVText_W_Rg.woff) format("woff"),url(//web.static.nowtv.com/assets/fonts/NOWTVText_W_Rg.ttf) format("truetype"),url(//web.static.nowtv.com/assets/fonts/NOWTVText_W_Rg.svg) format("svg");
+    font-weight: 400;
+    font-style: normal
+}
+/*
+Main styles
+1. Typography, fonts & reset
+2. Nav
+3. Buttons
+4. Header
+
+=============================
+
+1. Typography, fonts & reset
+*/
+
+body, html {
+    height: 100%;
+}
+.app {
+    font-family: 'Open Sans', sans-serif;
+    font-size: 14px;
+    margin-bottom: 30px;
+}
+
+
+/*
+2. Nav
+*/
+.app .nav>li>a{
+    color: #FF6600;
+}
+.app .nav>li>a:focus, .app .nav>li>a:hover{
+    background: #FF6600;
+    color: #FFF;
+    border-radius: 50px;
+}
+/*
+3. Buttons
+*/
+.app .btn {
+    background: #660099;
+    color: #FFF;
+    padding: 10px 40px;
+    border-radius: 50px;
+    border: solid 2px #660099;
+
+}
+.app .btn:hover {
+    background: #FFF;
+    border: solid 2px #660099;
+    color: #660099;
+}
+/*
+4. Header
+*/
+.main-header {
+    background: #046FBA;
+
+}
 .main-header h1 {
     margin: 0;
     padding: 40px;
 }
 
+
+.dashboard-table { margin-bottom: 30px; }

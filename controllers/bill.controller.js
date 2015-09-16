@@ -4,7 +4,7 @@ import config from '../config';
 export default {
     bootstrap: function(req, res, next){
 
-        request.get(config.ajaxUrl, function(err, response) {
+        request.get(config.AJAX_URL, function(err, response) {
 
             if(err) console.error(err);
 
