@@ -1,0 +1,50 @@
+{
+  "name": "bskyb-alt",
+  "version": "1.0.0",
+  "description": "",
+  "main": "app.js",
+  "author": "Ricky Duckworth",
+  "license": "ISC",
+  "scripts": {
+    "start": "npm run build",
+    "build": "webpack -d --progress --watch",
+    "server": "babel-node --stage 0 app.js"
+  },
+  "dependencies": {
+    "alt": "^0.16.10",
+    "body-parser": "^1.13.3",
+    "cookie-parser": "^1.3.5",
+    "es6-promise": "^2.2.0",
+    "express": "^4.12.4",
+    "express-session": "^1.11.3",
+    "iso": "^4.1.0",
+    "isomorphic-fetch": "^2.1.1",
+    "lodash": "^3.10.1",
+    "moment": "^2.10.6",
+    "nprogress": "^0.2.0",
+    "object-assign": "^3.0.0",
+    "page": "^1.6.3",
+    "react": "^0.13.3",
+    "react-bootstrap": "^0.25.2",
+    "react-pagify": "^0.8.0",
+    "react-pivot": "^1.12.0",
+    "react-router": "^0.13.2",
+    "reactabular": "^0.7.1",
+    "superagent": "^1.3.0"
+  },
+  "devDependencies": {
+    "babel": "^5.8.20",
+    "babel-eslint": "^4.0.5",
+    "babel-loader": "^5.3.2",
+    "css-loader": "^0.18.0",
+    "eslint": "^1.0.0",
+    "eslint-plugin-react": "^3.1.0",
+    "jade": "^1.11.0",
+    "jade-loader": "^0.7.1",
+    "jasmine": "^2.3.2",
+    "react-hot-loader": "^1.2.8",
+    "style-loader": "^0.12.3",
+    "webpack": "^1.10.5",
+    "webpack-dev-server": "^1.11.0"
+  }
+}
