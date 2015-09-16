@@ -33,7 +33,7 @@ export default class SkyStore extends React.Component {
         const bill = this.state.bill;
         const skyStore = bill.skyStore;
 
-        return (<div className="col-md-12">
+        return (<div className="col-md-12" style={{paddingTop: "10px"}}>
             <div className="row">
                 <aside className="col-md-4 sidebar">
 

@@ -57,7 +57,7 @@ export default class CallCharges extends React.Component {
         const pagination = this.state.pagination;
         const paginated = Paginator.paginate(bill.callCharges.calls, pagination);
 
-        return (<div className="col-md-12">
+        return (<div className="col-md-12" style={{paddingTop: "10px"}}>
             <div className="row">
                 <aside className="col-md-4 sidebar">
 

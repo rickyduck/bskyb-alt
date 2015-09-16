@@ -1,7 +1,8 @@
 # NOW TV Bill
 
 An isomorphic single page app for viewing the NOW TV bill as per the test.
-Renders React on the server with Express.js. Built in ES6 with Alt.
+Renders React on the server with Express.js (usable with javascript disabled). Built in ES6 with Alt.
+Tests in jasmine.
 
 ### How to run
 
